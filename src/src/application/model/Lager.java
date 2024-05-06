@@ -1,7 +1,9 @@
 package application.model;
 
+import java.util.ArrayList;
+
 public class Lager {
     private String adresse;
     private int maxAntalFad;
-    private Fad fad;
+    private ArrayList<Fad> fad;
 }
