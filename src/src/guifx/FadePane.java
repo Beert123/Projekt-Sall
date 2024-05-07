@@ -6,51 +6,48 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 public class FadePane extends VBox {
 
     public FadePane() {
-        // Opret et nyt grid layout
-        GridPane gridPane = new GridPane();
-        gridPane.setPadding(new Insets(10));
-        gridPane.setHgap(10);
-        gridPane.setVgap(5);
+        GridPane pane = new GridPane();
+        pane.setPadding(new Insets(10));
+        pane.setHgap(10);
+        pane.setVgap(5);
 
-        // Opret labels og tekstfelter til indtastning af fadoplysninger
-        Label fadnummerLabel = new Label("Fadnummer:");
-        Label tidligereIndholdLabel = new Label("Tidligere indhold:");
-        Label indholdLabel = new Label("Indhold:");
-        Label fadhistorikLabel = new Label("Fadhistorik:");
+        Label fadHistorieLabel = new Label("Fadhistorie:");
+        TextField fadHistorieTextField = new TextField();
+        pane.add(fadHistorieLabel, 0, 0);
+        pane.add(fadHistorieTextField, 1, 0);
 
-        TextField fadnummerTextField = new TextField();
-        TextField tidligereIndholdTextField = new TextField();
-        TextField indholdTextField = new TextField();
-        TextField fadhistorikTextField = new TextField();
+        Label tidligereBrugLabel = new Label("Tidligere brug:");
+        TextField tidligereBrugTextField = new TextField();
+        pane.add(tidligereBrugLabel, 0, 1);
+        pane.add(tidligereBrugTextField, 1, 1);
 
-        // Tilføj labels og tekstfelter til grid layout
-        gridPane.add(fadnummerLabel, 0, 0);
-        gridPane.add(fadnummerTextField, 1, 0);
-        gridPane.add(tidligereIndholdLabel, 0, 1);
-        gridPane.add(tidligereIndholdTextField, 1, 1);
-        gridPane.add(indholdLabel, 0, 2);
-        gridPane.add(indholdTextField, 1, 2);
-        gridPane.add(fadhistorikLabel, 0, 3);
-        gridPane.add(fadhistorikTextField, 1, 3);
+        Label placeringLabel = new Label("Placering:");
+        TextField placeringTextField = new TextField();
+        pane.add(placeringLabel, 0, 2);
+        pane.add(placeringTextField, 1, 2);
 
-        // Opret knapper til at gemme og annullere fadet
+        Label koebsstedLabel = new Label("Købssted:");
+        TextField koebsstedTextField = new TextField();
+        pane.add(koebsstedLabel, 0, 3);
+        pane.add(koebsstedTextField, 1, 3);
+
+        Label fadNavnLabel = new Label("Fadnavn:");
+        TextField fadNavnTextField = new TextField();
+        pane.add(fadNavnLabel, 0, 4);
+        pane.add(fadNavnTextField, 1, 4);
+
         Button gemButton = new Button("Gem");
         Button annullerButton = new Button("Annuller");
 
-        // Opret en vandret boks til knapperne
         HBox buttonBox = new HBox(10);
         buttonBox.getChildren().addAll(gemButton, annullerButton);
 
-        // Tilføj knapboksen til grid layout
-        gridPane.add(buttonBox, 0, 4, 2, 1);
+        pane.add(buttonBox, 0, 5, 2, 1);
 
-        // Tilføj grid layout til FadePane
-        getChildren().add(gridPane);
+        getChildren().add(pane);
     }
 }
-

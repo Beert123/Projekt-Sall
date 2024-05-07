@@ -30,13 +30,18 @@ public class Gui extends Application{
         pane.add(tabPane,0,0);
 
         Tab destilleringerTab = new Tab();
-        destilleringerTab.setText("Destilleringer");
+        destilleringerTab.setText("Registrer destillering");
         destilleringerTab.setContent(new DestilleringerPane());
         tabPane.getTabs().add(destilleringerTab);
 
         Tab fadeTab = new Tab();
-        fadeTab.setText("Fade");
+        fadeTab.setText("Registrer fad");
         fadeTab.setContent(new FadePane());
         tabPane.getTabs().add(fadeTab);
+
+        Tab destillaterTab = new Tab();
+        destillaterTab.setText("Destillater oversigt");
+        destillaterTab.setContent(new DestillaterPane());
+        tabPane.getTabs().add(destillaterTab);
     }
 }

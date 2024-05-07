@@ -1,6 +1,6 @@
 package application.model;
 
-public class Destilat {
+public class Destillat {
     private double alkoholProcent;
     private int væskeMængdeIMl;
 }
