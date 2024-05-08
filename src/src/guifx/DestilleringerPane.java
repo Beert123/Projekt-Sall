@@ -21,6 +21,7 @@ public class DestilleringerPane extends VBox {
     private TextField alkoholprocent;
     private TextField kommentar;
     private TextField rygemateriale;
+
     public DestilleringerPane() {
 
         GridPane pane = new GridPane();
@@ -30,7 +31,7 @@ public class DestilleringerPane extends VBox {
 
         destilleringListView = new ListView<>();
         destilleringListView.getItems().setAll(Storage.getDestilleringer());
-        destilleringListView.setPrefSize(200,150);
+        destilleringListView.setPrefSize(200, 150);
         pane.add(destilleringListView, 0, 9, 2, 1);
 
         Label startDatoLabel = new Label("Startdato:");
@@ -79,7 +80,6 @@ public class DestilleringerPane extends VBox {
         Button annullerButton = new Button("Annuller");
         annullerButton.setOnAction(event -> annullerButtonAction());
 
-        // Opret en vandret boks til knapperne
         HBox buttonBox = new HBox(10);
         buttonBox.getChildren().addAll(gemButton, annullerButton);
 
@@ -87,14 +87,28 @@ public class DestilleringerPane extends VBox {
 
         getChildren().add(pane);
     }
-    private void gemButtonAction(){
-        if (startDato.getValue().isAfter(slutDato.getValue())){
+
+    private void gemButtonAction() {
+        if (startDato.getValue().isAfter(slutDato.getValue())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("FEJL");
             alert.setContentText("Startdatoen må IKKE være efter slutdatoen!");
             alert.showAndWait();
-        }
-        else {
+        } else if (
+                startDato.getValue() == null ||
+                        slutDato.getValue() == null ||
+                        maltbatchIGram.getText().isEmpty() ||
+                        kornsort.getText().isEmpty() ||
+                        væskeMængdeIMl.getText().isEmpty() ||
+                        alkoholprocent.getText().isEmpty() ||
+                        kommentar.getText().isEmpty() ||
+                        rygemateriale.getText().isEmpty()
+        ) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("FEJL");
+            alert.setContentText("Du mangler at udfylde et eller flere felter!");
+            alert.showAndWait();
+        } else {
             LocalDate startDatoValue = startDato.getValue();
             LocalDate slutDatoValue = slutDato.getValue();
             int maltbatchIGramValue = Integer.parseInt(maltbatchIGram.getText());
@@ -109,7 +123,8 @@ public class DestilleringerPane extends VBox {
         }
     }
 
-    private void annullerButtonAction(){
+
+    private void annullerButtonAction() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Bekræft Annullering");
         alert.setHeaderText(null);
