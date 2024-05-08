@@ -40,4 +40,15 @@ public class Fad {
     public int getFadKapacitet() {
         return fadKapacitet;
     }
+
+    @Override
+    public String toString() {
+        return "Fad: " +
+                "Fadhistore: '" + fadHistore + '\'' +
+                ", Tidligere brug: '" + tidligereBrug + '\'' +
+                ", Placering: " + placering +
+                ", Koebssted: '" + koebssted + '\'' +
+                ", Fadnavn: '" + fadNavn + '\'' +
+                ", Fadkapacitet: " + fadKapacitet;
+    }
 }
