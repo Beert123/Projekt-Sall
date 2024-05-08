@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 
 public class FadePane extends VBox {
 
+
     public FadePane() {
         GridPane pane = new GridPane();
         pane.setPadding(new Insets(10));

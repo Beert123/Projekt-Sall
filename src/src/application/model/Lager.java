@@ -11,6 +11,7 @@ public class Lager {
     public Lager(String adresse, int maxAntalFad) {
         this.adresse = adresse;
         this.maxAntalFad = maxAntalFad;
+
     }
 
     public void addFad(Fad fad){

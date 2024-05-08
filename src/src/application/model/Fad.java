@@ -13,5 +13,6 @@ public class Fad {
         this.placering = placering;
         this.koebssted = koebssted;
         this.fadNavn = fadNavn;
+
     }
 }

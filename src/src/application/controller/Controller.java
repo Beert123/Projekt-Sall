@@ -10,5 +10,6 @@ public class Controller {
         Destillering destillering = new Destillering(startDato, slutDato, maltbatchIGram, kornsort, væskeMængdeIMl, alkoholprocent, kommentar, rygemateriale);
         Storage.addDestillering(destillering);
         return destillering;
+
     }
 }

@@ -11,6 +11,7 @@ public class Gui extends Application{
         stage.setTitle("Sall Whisky");
         GridPane pane = new GridPane();
 
+
         this.initContent(pane);
 
         Scene scene = new Scene(pane);

@@ -108,6 +108,7 @@ public class DestilleringerPane extends VBox {
                     alkoholprocentValue, kommentarValue, rygematerialeValue));
         }
     }
+
     private void annullerButtonAction(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Bekræft Annullering");

@@ -21,6 +21,7 @@ public class Destillering {
         this.alkoholprocent = alkoholprocent;
         this.kommentar = kommentar;
         this.rygemateriale = rygemateriale;
+
     }
 
     @Override

@@ -42,5 +42,6 @@ public class DestillaterPane extends VBox {
 
         // Tilføj grid layout til DestillaterPane
         getChildren().add(gridPane);
+
     }
 }
