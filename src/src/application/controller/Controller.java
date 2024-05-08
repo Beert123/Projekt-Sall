@@ -17,4 +17,5 @@ public class Controller {
         Storage.addFad(fad);
         return fad;
     }
+
 }

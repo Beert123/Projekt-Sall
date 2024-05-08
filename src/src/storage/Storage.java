@@ -3,6 +3,7 @@ package storage;
 import application.model.Destillat;
 import application.model.Destillering;
 import application.model.Fad;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,9 @@ public class Storage {
     }
     public static void addFad(Fad fad) {
         fade.add(fad);
+    }
+    public static void addDestillat(Destillat destillat){
+        destillater.add(destillat);
     }
 
     public static ArrayList<Fad> getFade() {

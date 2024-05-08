@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Destillat {
     private double alkoholProcent;
     private Mængde mængde;
-    private ArrayList<Destillering> destilleringer = new ArrayList<>();
 
     public Destillat(double alkoholProcent, Mængde mængde) {
         this.alkoholProcent = alkoholProcent;
@@ -20,7 +19,4 @@ public class Destillat {
         return mængde;
     }
 
-    public ArrayList<Destillering> getDestilleringer() {
-        return destilleringer;
-    }
 }
