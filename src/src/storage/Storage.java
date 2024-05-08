@@ -25,5 +25,6 @@ public class Storage {
 
     public static ArrayList<Destillat> getDestillater() {
         return destillater;
+
     }
 }
