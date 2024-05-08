@@ -29,6 +29,7 @@ public class Gui extends Application{
 
         TabPane tabPane = new TabPane();
         pane.add(tabPane,0,0);
+        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
 
         Tab destilleringerTab = new Tab();
         destilleringerTab.setText("Registrer destillering");
@@ -44,5 +45,6 @@ public class Gui extends Application{
         destillaterTab.setText("Destillater oversigt");
         destillaterTab.setContent(new DestillaterPane());
         tabPane.getTabs().add(destillaterTab);
+        pane.setStyle("-fx-background-image: url('https://i0.wp.com/www.forcemajeureaarhus.dk/wp-content/uploads/2023/02/Billede-21.02.2023-14.20.38.jpg?fit=797%2C1116&ssl=1')");
     }
 }
