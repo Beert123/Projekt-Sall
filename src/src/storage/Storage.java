@@ -12,9 +12,11 @@ public class Storage {
     private static ArrayList<Fad> fade = new ArrayList<>();
     private static ArrayList<Destillering> destilleringer = new ArrayList<>();
     private static ArrayList<Destillat> destillater = new ArrayList<>();
+
     public static void addDestillering(Destillering destillering) {
         destilleringer.add(destillering);
     }
+
     public static void addFad(Fad fad) {
         fade.add(fad);
     }
@@ -32,6 +34,5 @@ public class Storage {
 
     public static ArrayList<Destillat> getDestillater() {
         return destillater;
-
     }
 }
