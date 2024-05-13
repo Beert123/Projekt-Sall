@@ -28,6 +28,7 @@ public class Destillering {
 
     }
 
+
     @Override
     public String toString() {
         return "Destillering: " + "Start dato: " + startDato + ", Slut dato: " +
