@@ -19,4 +19,10 @@ public class Destillat {
         return mængde;
     }
 
+    @Override
+    public String toString() {
+        return "Destillat: " +
+                "alkoholProcent: " + alkoholProcent +
+                ", mængde: " + mængde;
+    }
 }
