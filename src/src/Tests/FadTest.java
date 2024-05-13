@@ -14,21 +14,21 @@ class FadTest {
 
     @Test
     void shouldNotIncreaseFadContentWhenNoSpaceIsAvailable() {
-        Fad fad = new Fad("history", "previousUse", 1, "store", "fadName", 100);
+        Fad fad = new Fad("Bertils kælder", "Bourbon", 1, "Danmark", "B0", 100);
         fad.fyldPåFad(101);
         assertEquals(0, fad.getMængdePåFad());
     }
 
     @Test
     void shouldFillFadToCapacityWhenExactAmountIsAdded() {
-        Fad fad = new Fad("history", "previousUse", 1, "store", "fadName", 100);
+        Fad fad = new Fad("Emils kælder", "Pisang ambon", 1, "Skotland", "Jul", 100);
         fad.fyldPåFad(100);
         assertEquals(100, fad.getMængdePåFad());
     }
 
     @Test
     void shouldNotChangeFadContentWhenZeroIsAdded() {
-        Fad fad = new Fad("history", "previousUse", 1, "store", "fadName", 100);
+        Fad fad = new Fad("Lucas' kælder", "Ubrugt", 1, "USA", "Thy", 100);
         fad.fyldPåFad(0);
         assertEquals(0, fad.getMængdePåFad());
     }
