@@ -1,5 +1,6 @@
 package storage;
 
+import application.model.Aftapning;
 import application.model.Destillat;
 import application.model.Destillering;
 import application.model.Fad;
@@ -12,6 +13,7 @@ public class Storage {
     private static ArrayList<Fad> fade = new ArrayList<>();
     private static ArrayList<Destillering> destilleringer = new ArrayList<>();
     private static ArrayList<Destillat> destillater = new ArrayList<>();
+    private static ArrayList<Aftapning> aftapninger = new ArrayList<>();
     public static void addDestillering(Destillering destillering) {
         destilleringer.add(destillering);
     }
@@ -20,6 +22,9 @@ public class Storage {
     }
     public static void addDestillat(Destillat destillat){
         destillater.add(destillat);
+    }
+    public static void addAftapning(Aftapning aftapning){
+        aftapninger.add(aftapning);
     }
 
     public static ArrayList<Fad> getFade() {
@@ -32,6 +37,9 @@ public class Storage {
 
     public static ArrayList<Destillat> getDestillater() {
         return destillater;
+    }
 
+    public static ArrayList<Aftapning> getAftapninger() {
+        return aftapninger;
     }
 }
