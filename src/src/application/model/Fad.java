@@ -1,5 +1,7 @@
 package application.model;
 
+import java.util.ArrayList;
+
 public class Fad {
     private String fadHistore;
     private String tidligereBrug;
@@ -7,6 +9,8 @@ public class Fad {
     private String koebssted;
     private String fadNavn;
     private int fadKapacitet;
+    private int mængdePåFad;
+    ArrayList<Destillat> destillater = new ArrayList<>();
 
     public Fad(String fadHistore, String tidligereBrug, int placering, String koebssted, String fadNavn, int fadKapacitet) {
         this.fadHistore = fadHistore;
@@ -15,6 +19,7 @@ public class Fad {
         this.koebssted = koebssted;
         this.fadNavn = fadNavn;
         this.fadKapacitet = fadKapacitet;
+        this.mængdePåFad = 0;
     }
 
     public String getFadHistore() {
@@ -39,6 +44,22 @@ public class Fad {
 
     public int getFadKapacitet() {
         return fadKapacitet;
+    }
+
+    public int getMængdePåFad() {
+        return mængdePåFad;
+    }
+    public int getLedigPlads(){
+        return fadKapacitet-mængdePåFad;
+    }
+    public ArrayList<Destillat> getDestillater() {
+        return destillater;
+    }
+    public void fyldPåFad(int mængde) {
+        // Kontroller om den ønskede mængde kan tilføjes uden at overskride kapaciteten
+        if (mængde <= getLedigPlads()) {
+            mængdePåFad += mængde;
+        }
     }
 
     @Override

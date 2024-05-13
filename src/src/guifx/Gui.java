@@ -45,6 +45,6 @@ public class Gui extends Application{
         destillaterTab.setText("Destillater oversigt");
         destillaterTab.setContent(new DestillaterPane());
         tabPane.getTabs().add(destillaterTab);
-        pane.setStyle("-fx-background-image: url('https://i0.wp.com/www.forcemajeureaarhus.dk/wp-content/uploads/2023/02/Billede-21.02.2023-14.20.38.jpg?fit=797%2C1116&ssl=1')");
+        pane.setStyle("-fx-background-image: url('https://mydailyspace.dk/wp-content/uploads/2021/02/natasha-arefyeva-u1pYVFDS2CI-unsplash-scaled-e1620811866156-772x1024.jpg')");
     }
 }
