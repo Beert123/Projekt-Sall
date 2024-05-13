@@ -64,6 +64,8 @@ public class DestillaterPane extends VBox {
         ledigPladsLabel = new Label();
         pane.add(ledigPladsLabel, 1, 3);
 
+        Label destillaterFyldtPåFadLabel = new Label("Destillater der er fyldt på fad vises ovenfor");
+        pane.add(destillaterFyldtPåFadLabel,1,5);
 
         getChildren().add(pane);
 

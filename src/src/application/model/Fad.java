@@ -56,7 +56,6 @@ public class Fad {
         return destillater;
     }
     public void fyldPåFad(int mængde) {
-        // Kontroller om den ønskede mængde kan tilføjes uden at overskride kapaciteten
         if (mængde <= getLedigPlads()) {
             mængdePåFad += mængde;
         }
