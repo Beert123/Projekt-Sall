@@ -1,12 +1,24 @@
 package guifx;
 
-import application.model.Fad;
-import application.model.Lager;
+import application.model.*;
 import javafx.application.Application;
+import storage.Storage;
+
+import java.time.LocalDate;
 
 public class App {
     public static void main(String[] args) {
+        initStorage();
         Application.launch(Gui.class);
+
+    }
+    private static void initStorage(){
+        Destillering destillering = new Destillering(LocalDate.of(2024,6,20),LocalDate.of(2024,7,20),
+                500,"Byg",750,67.9,"Ingen kommentar","Tørv");
+        Storage.addDestillering(destillering);
+        destillering.createDestillat(66.3,new Mængde(750));
+        Fad fad = new Fad("Fra 2. Verdenskrig","Tidligere fyldt med Jægermeister",39,"Købt i Esbjerg","Jæger101",130);
+        Storage.addFad(fad);
     }
 
 }

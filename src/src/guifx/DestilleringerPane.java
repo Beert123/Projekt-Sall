@@ -10,6 +10,7 @@ import javafx.scene.layout.VBox;
 import storage.Storage;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 public class DestilleringerPane extends VBox {
     private ListView<Destillering> destilleringListView;
@@ -129,7 +130,8 @@ public class DestilleringerPane extends VBox {
         alert.setTitle("Bekræft Annullering");
         alert.setHeaderText(null);
         alert.setContentText("Er du sikker på, at du vil annullere og starte forfra?");
-        alert.showAndWait();
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK){
         startDato.setValue(null);
         slutDato.setValue(null);
         maltbatchIGram.clear();
@@ -138,5 +140,6 @@ public class DestilleringerPane extends VBox {
         alkoholprocent.clear();
         kommentar.clear();
         rygemateriale.clear();
+        }
     }
 }

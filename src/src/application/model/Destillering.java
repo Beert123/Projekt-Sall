@@ -1,5 +1,7 @@
 package application.model;
 
+import storage.Storage;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -78,6 +80,7 @@ public class Destillering {
     public Destillat createDestillat (double alkoholProcent, Mængde mængde){
         Destillat destillat = new Destillat(alkoholProcent, mængde);
         destillater.add(destillat);
+        Storage.addDestillat(destillat);
         return destillat;
     }
 }
