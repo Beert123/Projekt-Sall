@@ -30,20 +30,21 @@ public class Gui extends Application{
         pane.add(tabPane,0,0);
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
 
-        Tab destilleringerTab = new Tab();
-        destilleringerTab.setText("Registrer destillering");
-        destilleringerTab.setContent(new DestilleringerPane());
-        tabPane.getTabs().add(destilleringerTab);
-
         Tab fadeTab = new Tab();
         fadeTab.setText("Registrer fad");
         fadeTab.setContent(new FadePane());
         tabPane.getTabs().add(fadeTab);
 
+        DestillaterPane destillaterPaneTest = new DestillaterPane();
         Tab destillaterTab = new Tab();
         destillaterTab.setText("Destillater oversigt");
-        destillaterTab.setContent(new DestillaterPane());
+        destillaterTab.setContent(destillaterPaneTest);
         tabPane.getTabs().add(destillaterTab);
+
+        Tab destilleringerTab = new Tab();
+        destilleringerTab.setText("Registrer destillering");
+        destilleringerTab.setContent(new DestilleringerPane(destillaterPaneTest));
+        tabPane.getTabs().add(destilleringerTab);
 
         Tab aftapTab = new Tab();
         aftapTab.setText("Aftap fad");

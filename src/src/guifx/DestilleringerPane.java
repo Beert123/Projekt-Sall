@@ -1,6 +1,7 @@
 package guifx;
 
 import application.controller.Controller;
+import application.model.Destillat;
 import application.model.Destillering;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
@@ -10,6 +11,7 @@ import javafx.scene.layout.VBox;
 import storage.Storage;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 public class DestilleringerPane extends VBox {
@@ -22,10 +24,12 @@ public class DestilleringerPane extends VBox {
     private TextField alkoholprocent;
     private TextField kommentar;
     private TextField rygemateriale;
+    private DestillaterPane destillaterPane;
 
-    public DestilleringerPane() {
+    public DestilleringerPane(DestillaterPane destillaterPane) {
 
         GridPane pane = new GridPane();
+        this.destillaterPane = destillaterPane;
         pane.setPadding(new Insets(10));
         pane.setHgap(10);
         pane.setVgap(5);
@@ -89,6 +93,11 @@ public class DestilleringerPane extends VBox {
         getChildren().add(pane);
     }
 
+    public void updateDestillatListView(List<Destillering> destilleringer) {
+        destilleringListView.getItems().setAll(destilleringer);
+    }
+
+
     private void gemButtonAction() {
         if (startDato.getValue().isAfter(slutDato.getValue())) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -119,8 +128,10 @@ public class DestilleringerPane extends VBox {
             String kommentarValue = kommentar.getText();
             String rygematerialeValue = rygemateriale.getText();
 
-            destilleringListView.getItems().add(Controller.createDestillering(startDatoValue, slutDatoValue, maltbatchIGramValue, kornsortValue, væskeMængdeIMlValue,
-                    alkoholprocentValue, kommentarValue, rygematerialeValue));
+            Destillering destillering = Controller.createDestillering(startDatoValue, slutDatoValue, maltbatchIGramValue, kornsortValue, væskeMængdeIMlValue,
+                    alkoholprocentValue, kommentarValue, rygematerialeValue);
+            destilleringListView.getItems().add(destillering);
+            destillaterPane.updateDestilleringListView(Storage.getDestilleringer());
         }
     }
 

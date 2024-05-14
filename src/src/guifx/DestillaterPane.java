@@ -11,6 +11,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import storage.Storage;
 
+import java.util.List;
+
 public class DestillaterPane extends VBox {
 
     private ListView<Destillat> destillatListView;
@@ -86,10 +88,13 @@ public class DestillaterPane extends VBox {
         fyldPaaFadButton.setOnAction(event -> fyldPaFad());
     }
 
-    private void updateDestillatListView(Destillering selectedDestillering) {
+    public void updateDestillatListView(Destillering selectedDestillering) {
         destillatListView.getItems().setAll(selectedDestillering.getDestillater());
     }
 
+    public void updateDestilleringListView(List<Destillering> destilleringList){
+        destilleringListView.getItems().setAll(destilleringList);
+    }
     private void updateLedigPladsLabel(Fad selectedFad) {
         ledigPladsLabel.setText("Ledig plads på fad: " + selectedFad.getLedigPlads() + " liter");
     }
