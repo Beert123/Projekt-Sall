@@ -17,6 +17,13 @@ public class Gui extends Application{
         Scene scene = new Scene(pane);
         stage.setScene(scene);
         stage.show();
+
+        aftapningPane = new AftapningPane();
+
+        DestillaterPane destillaterPane = new DestillaterPane(aftapningPane);
+    }
+    public AftapningPane getAftapningPane() {
+        return aftapningPane;
     }
     // -------------------------------------------------------------------------
 
@@ -31,11 +38,6 @@ public class Gui extends Application{
         pane.add(tabPane,0,0);
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
 
-        // Opret AftapningPane-objektet
-        aftapningPane = new AftapningPane();
-
-        // Opret DestillaterPane-objektet og send reference til AftapningPane
-        DestillaterPane destillaterPane = new DestillaterPane(aftapningPane);
 
         Tab destilleringerTab = new Tab();
         destilleringerTab.setText("Registrer destillering");
