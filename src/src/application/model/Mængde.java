@@ -6,4 +6,10 @@ public class Mængde {
     public Mængde(int mængde) {
         this.mængde = mængde;
     }
+
+    @Override
+    public String toString() {
+        return "Mængde: " +
+                "mængde: " + mængde;
+    }
 }

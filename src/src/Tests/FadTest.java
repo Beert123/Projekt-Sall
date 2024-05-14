@@ -16,8 +16,7 @@ class FadTest {
     void påfyldningAfAlleredeFyldtFad() {
         Fad fad = new Fad("Bertils kælder", "Bourbon", 1, "Danmark", "B0", 100);
         fad.fyldPåFad(101);
-        assertEquals(0, fad.getMængdePåFad());
-    }
+        assertThrows(RuntimeException.class, () -> fad.fyldPåFad(101));    }
 
     @Test
     void påfyldningTopGrænseværdiAfFad() {

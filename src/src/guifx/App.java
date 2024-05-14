@@ -19,6 +19,9 @@ public class App {
         destillering.createDestillat(66.3,new Mængde(750));
         Fad fad = new Fad("Fra 2. Verdenskrig","Tidligere fyldt med Jægermeister",39,"Købt i Esbjerg","Jæger101",130);
         Storage.addFad(fad);
+
+        Aftapning aftapning = new Aftapning(fad,Storage.getDestillater(),5,LocalDate.now());
+        Storage.addAftapning(aftapning);
     }
 
 }
