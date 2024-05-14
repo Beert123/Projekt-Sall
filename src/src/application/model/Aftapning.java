@@ -16,6 +16,10 @@ public class Aftapning {
         this.dato = dato;
     }
 
+    public void setLiter(int liter) {
+        this.liter = liter;
+    }
+
     public int getLiter() {
         return liter;
     }

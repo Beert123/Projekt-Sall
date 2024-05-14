@@ -18,10 +18,12 @@ public class App {
         Storage.addDestillering(destillering);
         destillering.createDestillat(66.3,new Mængde(750));
         Fad fad = new Fad("Fra 2. Verdenskrig","Tidligere fyldt med Jægermeister",39,"Købt i Esbjerg","Jæger101",130);
+        Fad fad2 = new Fad("Poggers", "ingen",10,"Søborg","sejsej",70);
         Storage.addFad(fad);
+        Storage.addFad(fad2);
 
-        Aftapning aftapning1 = new Aftapning(fad,Storage.getDestillater(),5,LocalDate.now());
-        Aftapning aftapning2 = new Aftapning(fad,Storage.getDestillater(),5,LocalDate.now());
+        Aftapning aftapning1 = new Aftapning(fad,Storage.getDestillater(),50,LocalDate.now());
+        Aftapning aftapning2 = new Aftapning(fad2,Storage.getDestillater(),25,LocalDate.now());
         Storage.addAftapning(aftapning1);
         Storage.addAftapning(aftapning2);
     }

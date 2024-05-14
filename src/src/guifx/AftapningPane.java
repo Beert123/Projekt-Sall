@@ -34,15 +34,22 @@ public class AftapningPane extends VBox {
         Button fyldPaaFlaskeButton = new Button("Fyld på flaske");
         pane.add(fyldPaaFlaskeButton,0,3);
 
+        Button seFortyndingHis = new Button("Historik");
+        pane.add(seFortyndingHis,0,4);
 
         getChildren().add(pane);
 
         fyldPaaFlaskeButton.setOnAction(event -> fyldPaaFlaske());
     }
     private void fyldPaaFlaske(){
+        int antalLiterIAlt = 0;
         for (Aftapning selectedItem : aftapningListView.getSelectionModel().getSelectedItems()) {
-
+            antalLiterIAlt += selectedItem.getLiter();
+            selectedItem.setLiter(0);
+            if(selectedItem.getLiter() == 0){
+                aftapningListView.getItems().remove(selectedItem);
+            }
         }
-        int fortyndingiL =  Integer.parseInt(fortyndingTF.getText());
+        antalLiterIAlt +=  Integer.parseInt(fortyndingTF.getText());
     }
 }

@@ -25,6 +25,12 @@ public class Flaske {
         return alkoholprocent;
     }
 
+    public int beregnAntalFlasker(int liter){
+        int antalFlasker = 0;
+        antalFlasker = liter/kapacitetILiter;
+
+        return antalFlasker;
+    }
     @Override
     public String toString() {
         return "Flaske{" +
