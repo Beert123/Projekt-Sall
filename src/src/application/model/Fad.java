@@ -63,6 +63,12 @@ public class Fad {
     public void fyldPåFad(int mængde) {
         if (mængde <= getLedigPlads()) {
             mængdePåFad += mængde;
+        }else {
+            try {
+                throw new Exception("Der kan ikke fyldes mere på dette fad");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
     public void fyldPaaFlaske(Fad fad, int mængde){
