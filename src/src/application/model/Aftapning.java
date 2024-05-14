@@ -15,4 +15,16 @@ public class Aftapning {
         this.literDerFyldesPåFad = literDerFyldesPåFad;
         this.dato = dato;
     }
+
+
+
+    @Override
+    public String toString() {
+        return "Aftapning{" +
+                "fad=" + fad +
+                ", destillat=" + destillat +
+                ", literDerFyldesPåFad=" + literDerFyldesPåFad +
+                ", dato=" + dato +
+                '}';
+    }
 }
