@@ -122,6 +122,7 @@ public class DestillaterPane extends VBox {
                 alert.setContentText("Indtast venligst et nummer som mængden");
                 alert.showAndWait();
             }
+
         }
     }
 }

@@ -6,4 +6,5 @@ public class Mængde {
     public Mængde(int mængde) {
         this.mængde = mængde;
     }
+
 }

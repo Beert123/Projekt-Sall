@@ -65,6 +65,7 @@ public class Fad {
             mængdePåFad += mængde;
         }
     }
+
     public void fyldPaaFlaske(Fad fad, int mængde){
         if(mængde < fad.getMængdePåFad()){
             fad.setMængdePåFad(fad.getFadKapacitet() - mængde);

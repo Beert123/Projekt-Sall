@@ -26,6 +26,7 @@ public class App {
         Aftapning aftapning2 = new Aftapning(fad2,Storage.getDestillater(),25,LocalDate.now());
         Storage.addAftapning(aftapning1);
         Storage.addAftapning(aftapning2);
+
     }
 
 }

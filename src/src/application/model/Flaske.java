@@ -8,6 +8,7 @@ public class Flaske {
     private boolean fortynding;
     private double alkoholprocent;
 
+
     public Flaske(ArrayList<Aftapning> aftapninger, boolean fortynding, double alkoholprocent) {
         this.aftapninger = aftapninger;
         this.kapacitetILiter = 1;

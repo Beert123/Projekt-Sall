@@ -11,6 +11,7 @@ public class Destillat {
         this.mængde = mængde;
     }
 
+
     public double getAlkoholProcent() {
         return alkoholProcent;
     }
