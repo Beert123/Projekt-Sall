@@ -20,8 +20,10 @@ public class App {
         Fad fad = new Fad("Fra 2. Verdenskrig","Tidligere fyldt med Jægermeister",39,"Købt i Esbjerg","Jæger101",130);
         Storage.addFad(fad);
 
-        Aftapning aftapning = new Aftapning(fad,Storage.getDestillater(),5,LocalDate.now());
-        Storage.addAftapning(aftapning);
+        Aftapning aftapning1 = new Aftapning(fad,Storage.getDestillater(),5,LocalDate.now());
+        Aftapning aftapning2 = new Aftapning(fad,Storage.getDestillater(),5,LocalDate.now());
+        Storage.addAftapning(aftapning1);
+        Storage.addAftapning(aftapning2);
     }
 
 }
