@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 public class Gui extends Application{
+    private AftapningPane aftapningPane;
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Sall Whisky");
@@ -30,6 +31,12 @@ public class Gui extends Application{
         pane.add(tabPane,0,0);
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
 
+        // Opret AftapningPane-objektet
+        aftapningPane = new AftapningPane();
+
+        // Opret DestillaterPane-objektet og send reference til AftapningPane
+        DestillaterPane destillaterPane = new DestillaterPane(aftapningPane);
+
         Tab destilleringerTab = new Tab();
         destilleringerTab.setText("Registrer destillering");
         destilleringerTab.setContent(new DestilleringerPane());
@@ -42,7 +49,7 @@ public class Gui extends Application{
 
         Tab destillaterTab = new Tab();
         destillaterTab.setText("Destillater oversigt");
-        destillaterTab.setContent(new DestillaterPane());
+        destillaterTab.setContent(new DestillaterPane(aftapningPane));
         tabPane.getTabs().add(destillaterTab);
 
         Tab aftapTab = new Tab();

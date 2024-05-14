@@ -20,8 +20,8 @@ public class Controller {
         Storage.addFad(fad);
         return fad;
     }
-    public static Aftapning createAftapning(Fad fad, ArrayList<Destillat> destillat, int literDerFyldesPåFad, LocalDate dato){
-        Aftapning aftapning = new Aftapning(fad,destillat,fad.getMængdePåFad(),dato);
+    public static Aftapning createAftapning(Fad fad, ArrayList<Destillat> destillat, int liter, LocalDate dato){
+        Aftapning aftapning = new Aftapning(fad,destillat,liter,dato);
         Storage.addAftapning(aftapning);
         return aftapning;
     }

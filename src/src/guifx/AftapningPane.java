@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import storage.Storage;
 
 public class AftapningPane extends VBox {
-    private ListView<Aftapning> aftapningListView;
+    public ListView<Aftapning> aftapningListView;
     private ListView<Flaske> flaskeListView;
     private TextField fortyndingTF;
 
