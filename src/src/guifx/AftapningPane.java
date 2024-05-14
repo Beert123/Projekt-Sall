@@ -4,16 +4,12 @@ import application.model.Aftapning;
 import application.model.Fad;
 import application.model.Flaske;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import storage.Storage;
 
 public class AftapningPane extends VBox {
-    private ListView<Fad> fadListView;
     private ListView<Aftapning> aftapningListView;
     private ListView<Flaske> flaskeListView;
     private TextField fortyndingTF;
@@ -24,15 +20,12 @@ public class AftapningPane extends VBox {
         pane.setHgap(10);
         pane.setVgap(5);
 
-        fadListView = new ListView<>();
-        fadListView.getItems().setAll(Storage.getFade());
-        fadListView.setPrefSize(600, 100);
-        pane.add(fadListView, 0, 0, 2,1);
 
         aftapningListView = new ListView<>();
         aftapningListView.getItems().setAll(Storage.getAftapninger());
-        aftapningListView.setPrefHeight(150);
-        pane.add(aftapningListView,0,1);
+        aftapningListView.setPrefSize(600,100);
+        pane.add(aftapningListView,0,0,2,1);
+        aftapningListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
         fortyndingTF = new TextField();
         fortyndingTF.setPromptText("Indtast fortynding i L");
@@ -47,7 +40,9 @@ public class AftapningPane extends VBox {
         fyldPaaFlaskeButton.setOnAction(event -> fyldPaaFlaske());
     }
     private void fyldPaaFlaske(){
+        for (Aftapning selectedItem : aftapningListView.getSelectionModel().getSelectedItems()) {
 
-
+        }
+        int fortyndingiL =  Integer.parseInt(fortyndingTF.getText());
     }
 }
