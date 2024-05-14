@@ -11,7 +11,7 @@ public class Fad {
     private int fadKapacitet;
     private int mængdePåFad;
     ArrayList<Destillat> destillater = new ArrayList<>();
-
+    private Flaske flaske;
     public Fad(String fadHistore, String tidligereBrug, int placering, String koebssted, String fadNavn, int fadKapacitet) {
         this.fadHistore = fadHistore;
         this.tidligereBrug = tidligereBrug;
@@ -55,9 +55,19 @@ public class Fad {
     public ArrayList<Destillat> getDestillater() {
         return destillater;
     }
+
+    public void setMængdePåFad(int mængdePåFad) {
+        this.mængdePåFad = mængdePåFad;
+    }
+
     public void fyldPåFad(int mængde) {
         if (mængde <= getLedigPlads()) {
             mængdePåFad += mængde;
+        }
+    }
+    public void fyldPaaFlaske(Fad fad, int mængde){
+        if(mængde < fad.getMængdePåFad()){
+            fad.setMængdePåFad(fad.getFadKapacitet() - mængde);
         }
     }
 

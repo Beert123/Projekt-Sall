@@ -30,4 +30,14 @@ public class Flaske {
     public double getAlkoholprocent() {
         return alkoholprocent;
     }
+
+    @Override
+    public String toString() {
+        return "Flaske{" +
+                "aftapninger=" + aftapninger +
+                ", kapacitetILiter=" + kapacitetILiter +
+                ", fortynding=" + fortynding +
+                ", alkoholprocent=" + alkoholprocent +
+                '}';
+    }
 }
