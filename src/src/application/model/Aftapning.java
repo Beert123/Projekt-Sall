@@ -9,10 +9,11 @@ public class Aftapning {
     private int liter;
     private LocalDate dato;
 
-    public Aftapning(Fad fad, ArrayList<Destillat> destillat, int liter, LocalDate dato) {
+
+    public Aftapning(Fad fad, ArrayList<Destillat> destillat, int literDerFyldesPåFad, LocalDate dato) {
         this.fad = fad;
         this.destillat = destillat;
-        this.liter = liter;
+        this.liter = literDerFyldesPåFad;
         this.dato = dato;
     }
 

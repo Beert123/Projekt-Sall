@@ -30,4 +30,5 @@ class FadTest {
         fad.fyldPåFad(0);
         assertEquals(0, fad.getMængdePåFad());
     }
+
 }

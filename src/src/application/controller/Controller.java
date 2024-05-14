@@ -15,6 +15,7 @@ public class Controller {
         Storage.addDestillering(destillering);
         return destillering;
     }
+
     public static Fad createFad(String fadHistore, String tidligereBrug, int placering, String koebssted, String fadNavn, int fadKapacitet){
         Fad fad = new Fad(fadHistore, tidligereBrug, placering, koebssted, fadNavn, fadKapacitet);
         Storage.addFad(fad);

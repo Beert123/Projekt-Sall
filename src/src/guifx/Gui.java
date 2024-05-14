@@ -34,6 +34,7 @@ public class Gui extends Application{
         pane.setVgap(10.0);
         //___________________________________________________________________________________________
 
+
         TabPane tabPane = new TabPane();
         pane.add(tabPane,0,0);
         tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);

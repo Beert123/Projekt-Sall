@@ -39,4 +39,5 @@ class DestilleringTest {
         assertTrue(destillering.getDestillater().contains(destillat));
         assertEquals(sizeBefore + 1, sizeAfter);
     }
+
 }

@@ -20,7 +20,6 @@ public class AftapningPane extends VBox {
         pane.setHgap(10);
         pane.setVgap(5);
 
-
         aftapningListView = new ListView<>();
         aftapningListView.getItems().setAll(Storage.getAftapninger());
         aftapningListView.setPrefSize(600,100);

@@ -14,6 +14,7 @@ public class Lager {
 
     }
 
+
     public void addFad(Fad fad){
         if (antalNuværendeFade < maxAntalFad){
         if (!fade.contains(fad)){

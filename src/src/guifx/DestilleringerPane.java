@@ -119,6 +119,7 @@ public class DestilleringerPane extends VBox {
             alert.setContentText("Du mangler at udfylde et eller flere felter!");
             alert.showAndWait();
         } else {
+
             LocalDate startDatoValue = startDato.getValue();
             LocalDate slutDatoValue = slutDato.getValue();
             int maltbatchIGramValue = Integer.parseInt(maltbatchIGram.getText());

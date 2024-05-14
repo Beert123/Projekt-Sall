@@ -71,6 +71,7 @@ public class Fad {
             }
         }
     }
+
     public void fyldPaaFlaske(Fad fad, int mængde){
         if(mængde < fad.getMængdePåFad()){
             fad.setMængdePåFad(fad.getFadKapacitet() - mængde);

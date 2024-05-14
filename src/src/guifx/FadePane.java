@@ -21,6 +21,7 @@ public class FadePane extends VBox {
     private ListView<Fad> fadListView = new ListView<>();
 
 
+
     public FadePane() {
         GridPane pane = new GridPane();
         pane.setPadding(new Insets(10));
